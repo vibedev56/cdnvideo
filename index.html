@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDNvideo HLS Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>CDNvideo HLS Player</h1>
+        
+        <div class="player-container">
+            <div class="video-wrapper">
+                <video id="video" crossorigin></video>
+                
+                <div class="custom-controls">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-filled"></div>
+                        </div>
+                        <div class="buffered-bar"></div>
+                    </div>
+                    
+                    <div class="controls-bottom">
+                        <button id="play-pause" class="control-button">
+                            <svg class="play-icon" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                            <svg class="pause-icon" viewBox="0 0 24 24">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                            </svg>
+                        </button>
+                        
+                        <div class="time-display">
+                            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                        
+                        <button id="fullscreen" class="control-button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-title">Текущая позиция:</div>
+                    <div id="current-position" class="metric-value">0:00</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-title">Размер буфера:</div>
+                    <div id="buffer-length" class="metric-value">0 сек</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
